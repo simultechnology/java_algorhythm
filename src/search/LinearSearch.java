@@ -9,7 +9,7 @@ package search;
  */
 public class LinearSearch {
 
-    static private class Entry {
+    private class Entry {
 
         int key;            // 比較の対象となるキー
         Object data;        // それ以外の情報
@@ -49,9 +49,9 @@ public class LinearSearch {
      * @return キーに対応するデータ。キーが見つからなければnullを返す
      */
     public Object search(int key) {
-        for (Entry e : table) {
-            if (e.key == key) {
-                return e.data;
+        for (Entry et : table) {
+            if (et != null && et.key == key) {
+                return et.data;
             }
         }
         return null;
