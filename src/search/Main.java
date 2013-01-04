@@ -24,44 +24,47 @@ public class Main {
     }
 
     private void execute() throws InterruptedException {
-        final LinearSearch table = new LinearSearch();
+        final Search table = new LinearSearch();
+        table.initMax(35000000);
 
         final Random random = new Random();
 
-        for (int i = 0; i < 10000; i++) {
+        for (int i = 0; i < 5000; i++) {
             final int index = i;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     System.out.println(index + " Thread start!!");
-                    for (int i = 0; i  < 5000; i++) {
+                    for (int i = 0; i  < 7000; i++) {
 
-                        final int ranNum = random.nextInt(50000000);
+                        final int ranNum = random.nextInt(table.getMAX());
                         table.add(ranNum, String.format("this is %d", ranNum));
                     }
                     System.out.println(index + " Thread end!!");
                     int count = increment();
-                    if (count == 10000) {
-                        startSearch(table);
+                    if (count == 5000) {
+                        final int target = random.nextInt(table.getMAX());
+                        startSearch(table, target);
                     }
                 }
             }).start();
         }
     }
 
-//        for (int i = 40000000; i  < 50000000; i++) {
-//            final int ranNum = random.nextInt(50000000);
-//            table.add(ranNum, String.format("this is %d", ranNum));
-//        }
+    private void startSearch(Search table, int target) {
 
-    private void startSearch(LinearSearch table) {
-
+        System.out.printf("table size is %d\n", table.table.length);
         System.out.println("setting data to table is completed!!");
+        System.out.printf("target is %d\n", target);
+        long startTime = System.currentTimeMillis();
 
-        String x = (String) table.search(10);
+        String x = (String) table.search(target);
         if (x != null) {
             System.out.println(String.format("value = %s", x));
         }
-
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.printf("duration is %d\n", duration);
+        return;
     }
 }
