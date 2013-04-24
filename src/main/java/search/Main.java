@@ -23,26 +23,36 @@ public class Main {
         return count;
     }
 
+    private int keyCount = 0;
+    synchronized int incrementKey() {
+        keyCount += 1;
+        return keyCount;
+    }
+
+    static final int THREAD_MAX_NUMBER = 500;
+    static final int DATA_MAX_NUMBER = 21000;
+
     private void execute() throws InterruptedException {
-        final Search table = new LinearSearch();
-        table.initMax(35000000);
+        final Search table = new BinarySearch();
+        table.initMax(THREAD_MAX_NUMBER * DATA_MAX_NUMBER);
 
         final Random random = new Random();
 
-        for (int i = 0; i < 5000; i++) {
+        for (int i = 0; i < THREAD_MAX_NUMBER; i++) {
             final int index = i;
             new Thread(new Runnable() {
                 @Override
                 public void run() {
                     System.out.println(index + " Thread start!!");
-                    for (int i = 0; i  < 7000; i++) {
+                    for (int i = 0; i  < DATA_MAX_NUMBER; i++) {
 
-                        final int ranNum = random.nextInt(table.getMAX());
-                        table.add(ranNum, String.format("this is %d", ranNum));
+                        //final int ranNum = random.nextInt(table.getMAX());
+                        final int num = incrementKey();
+                        table.add(num, String.format("this is %d", num));
                     }
                     System.out.println(index + " Thread end!!");
                     int count = increment();
-                    if (count == 5000) {
+                    if (count == THREAD_MAX_NUMBER) {
                         final int target = random.nextInt(table.getMAX());
                         startSearch(table, target);
                     }

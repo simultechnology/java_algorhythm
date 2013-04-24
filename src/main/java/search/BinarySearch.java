@@ -12,7 +12,7 @@ public class BinarySearch extends Search {
     public Object search(int key) {
 
         int low = 0;
-        int high = n -1;
+        int high = MAX;
 
         while (low <= high) {
             int middle = (low + high) / 2;
