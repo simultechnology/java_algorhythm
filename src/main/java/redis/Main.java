@@ -1,5 +1,8 @@
 package redis;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Transaction;
+
 /**
  * Created with IntelliJ IDEA.
  * User: ishi
@@ -9,6 +12,21 @@ package redis;
  */
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello!");
+        Jedis jedis = new Jedis("127.0.0.1", 6379, 10);
+        jedis.set("foo", "bar");
+        System.out.println(jedis.get("foo"));
+        System.out.println(jedis.get("greeting"));
+
+        jedis.set("foo", "123");
+        System.out.println(jedis.get("foo"));
+
+        System.out.println(jedis.get("my-name"));
+        Transaction transaction = jedis.multi();
+        transaction.set("my-name", "t-issi-");
+        transaction.incr("count");
+        transaction.exec();
+
+        System.out.println(jedis.get("my-name"));
+        System.out.println(jedis.get("count"));
     }
 }
