@@ -9,6 +9,6 @@ public class MyStack {
     private static final int DEFAULT_STACK_SIZE = 100;
 
     public static void main(String[] args) {
-
+        System.out.println("start!");
     }
 }
