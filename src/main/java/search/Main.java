@@ -14,7 +14,6 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("LinearSearch start!!");
         new Main().execute();
-
     }
 
     private int count = 0;
