@@ -1,5 +1,7 @@
 package array;
 
+import java.util.Arrays;
+
 public class MyStack {
 
     private Object stack[];
@@ -16,6 +18,10 @@ public class MyStack {
         stack = new Object[size];
         stackSize = size;
         sp = 0;
+    }
+
+    public void clear() {
+        Arrays.fill(stack, 0, sp, null);
     }
 
     public static void main(String[] args) {
