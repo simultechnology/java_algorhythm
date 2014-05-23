@@ -16,11 +16,15 @@ public class LinearSearch extends Search {
      * @return キーに対応するデータ。キーが見つからなければnullを返す
      */
     public Object search(int key) {
+        int calculateCount = 0;
         for (Entry et : table) {
+            calculateCount += 1;
             if (et != null && et.key == key) {
+                System.out.printf("calculateCount : %d\n", calculateCount);
                 return et.data;
             }
         }
+        System.out.printf("calculateCount : %d\n", calculateCount);
         return null;
     }
 }

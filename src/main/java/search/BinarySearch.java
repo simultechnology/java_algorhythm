@@ -13,10 +13,12 @@ public class BinarySearch extends Search {
 
         int low = 0;
         int high = MAX;
-
+        int calculateCount = 0;
         while (low <= high) {
+            calculateCount += 1;
             int middle = (low + high) / 2;
             if (key == table[middle].key) {
+                System.out.printf("calculateCount : %d\n", calculateCount);
                 return table[middle].data;
             }
             else if (key < table[middle].key) {
@@ -26,6 +28,7 @@ public class BinarySearch extends Search {
                 low = middle + 1;
             }
         }
+        System.out.printf("calculateCount : %d\n", calculateCount);
         return null;
     }
 }

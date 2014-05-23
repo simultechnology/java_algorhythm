@@ -28,8 +28,8 @@ public class Main {
         return keyCount;
     }
 
-    static final int THREAD_MAX_NUMBER = 500;
-    static final int DATA_MAX_NUMBER = 21000;
+    static final int THREAD_MAX_NUMBER = 1;
+    static final int DATA_MAX_NUMBER = 510000;
 
     private void execute() throws InterruptedException {
         final Search table = new BinarySearch();
