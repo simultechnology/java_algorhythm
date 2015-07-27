@@ -4,9 +4,6 @@
       <root url="jar://$PROJECT_DIR$/lib/jedis-2.1.0.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="file://$USER_HOME$/git/java/jedis/src/main/java" />
-      <root url="file://$USER_HOME$/git/java/jedis/src/test/java" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
