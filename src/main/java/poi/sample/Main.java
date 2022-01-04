@@ -1,10 +1,8 @@
 package poi.sample;
 
-import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -22,9 +20,6 @@ public class Main {
         }
         catch (IOException e){
             System.out.println(e.toString());
-        }
-        catch (InvalidFormatException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
         }
 
         Sheet sheet = wb.getSheetAt(0);

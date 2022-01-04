@@ -74,6 +74,5 @@ public class Main {
         long endTime = System.currentTimeMillis();
         long duration = endTime - startTime;
         System.out.printf("duration is %d\n", duration);
-        return;
     }
 }

@@ -42,9 +42,9 @@ public class Main {
                 Cell cell = cellIte.next();
 
                 // 文字列タイプのセルのみを対象
-                if (cell.getCellType() != Cell.CELL_TYPE_STRING) {
-                    continue;
-                }
+//                if (cell.getCellType() != Cell.CELL_TYPE_STRING) {
+//                    continue;
+//                }
 
                 if (cell.getStringCellValue().equals("#TITLE#")) {
                     // 「#NAME#」を置換
