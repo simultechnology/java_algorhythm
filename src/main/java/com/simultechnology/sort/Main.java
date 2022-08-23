@@ -1,12 +1,7 @@
-package sort;
+package com.simultechnology.sort;
 
 import java.util.Arrays;
 import java.util.Random;
-
-import org.apache.commons.lang3.StringEscapeUtils;
-import sort.BubbleSort;
-import sort.QuickSort;
-import sort.Sort;
 
 public class Main {
 

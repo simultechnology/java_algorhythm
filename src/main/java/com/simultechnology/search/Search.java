@@ -1,4 +1,4 @@
-package search;
+package com.simultechnology.search;
 
 /**
  * Created with IntelliJ IDEA.

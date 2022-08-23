@@ -1,4 +1,4 @@
-package sort;
+package com.simultechnology.sort;
 
 public interface Sort {
 	

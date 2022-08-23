@@ -1,4 +1,4 @@
-package my.sample;
+package com.simultechnology.sample;
 
 import java.time.Year;
 

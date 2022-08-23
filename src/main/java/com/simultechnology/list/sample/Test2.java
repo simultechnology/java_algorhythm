@@ -1,4 +1,4 @@
-package list.sample;
+package com.simultechnology.list.sample;
 
 import java.util.ArrayList;
 import java.util.Iterator;

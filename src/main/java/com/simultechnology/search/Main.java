@@ -1,4 +1,4 @@
-package search;
+package com.simultechnology.search;
 
 import java.util.Random;
 
